@@ -1,1 +1,197 @@
-<p>Page dashboard</p>
+<div class="dashboard">
+  <div class="dashboard-header">
+    <div class="welcome-section">
+      <h1 class="welcome-title">Bonjour, <span class="highlight">Amadou</span></h1>
+      <p class="welcome-subtitle">Voici votre tableau de bord médical</p>
+    </div>
+    <div class="date-display">
+      <div class="current-date">13/02/1026</div>
+      <div class="current-time">13:45</div>
+    </div>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-card primary">
+      <div class="stat-icon">
+        <i class="fas fa-calendar-check"></i>
+      </div>
+      <div class="stat-content">
+        <div class="stat-value">3</div>
+        <div class="stat-label">RDV à venir</div>
+      </div>
+      <div class="stat-trend">
+        <span class="trend-up">+1 cette semaine</span>
+      </div>
+    </div>
+
+    <div class="stat-card success">
+      <div class="stat-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <div class="stat-content">
+        <div class="stat-value">12</div>
+        <div class="stat-label">RDV terminés</div>
+      </div>
+    </div>
+
+    <div class="stat-card warning">
+      <div class="stat-icon">
+        <i class="fas fa-clock"></i>
+      </div>
+      <div class="stat-content">
+        <div class="stat-value">2</div>
+        <div class="stat-label">En attente</div>
+      </div>
+    </div>
+
+    <div class="stat-card accent">
+      <div class="stat-icon">
+        <i class="fas fa-file-prescription"></i>
+      </div>
+      <div class="stat-content">
+        <div class="stat-value">5</div>
+        <div class="stat-label">Ordonnances</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-content">
+    <div class="card upcoming-rdv">
+      <div class="card-header">
+        <h3 class="card-title">Prochains RDV</h3>
+        <a routerLink="/rv" class="card-link">Voir tout</a>
+      </div>
+      <div class="card-content">
+        <div class="rdv-item">
+          <div class="rdv-date">
+            <div class="rdv-day">15</div>
+            <div class="rdv-month">JAN</div>
+          </div>
+          <div class="rdv-details">
+            <div class="rdv-title">Consultation générale</div>
+            <div class="rdv-info">
+              <i class="fas fa-clock"></i>
+              <span class="rdv-time">10:30 - Dr. Ndiaye</span>
+            </div>
+          </div>
+          <div class="rdv-status confirmed">Confirmé</div>
+        </div>
+        <div class="rdv-item">
+          <div class="rdv-date">
+            <div class="rdv-day">20</div>
+            <div class="rdv-month">JAN</div>
+          </div>
+          <div class="rdv-details">
+            <div class="rdv-title">Suivi traitement</div>
+            <div class="rdv-info">
+              <i class="fas fa-clock"></i>
+              <span class="rdv-time">14:00 - Dr. Sow</span>
+            </div>
+          </div>
+          <div class="rdv-status confirmed">Confirmé</div>
+        </div>
+        <div class="rdv-item">
+          <div class="rdv-date">
+            <div class="rdv-day">25</div>
+            <div class="rdv-month">JAN</div>
+          </div>
+          <div class="rdv-details">
+            <div class="rdv-title">Examen sanguin</div>
+            <div class="rdv-info">
+              <i class="fas fa-clock"></i>
+              <span class="rdv-time">09:00 - Laboratoire</span>
+            </div>
+          </div>
+          <div class="rdv-status pending">En attente</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card quick-actions">
+      <div class="card-header">
+        <h3 class="card-title">Actions rapides</h3>
+      </div>
+      <div class="card-content">
+        <div class="actions-grid">
+          <button class="action-btn primary" routerLink="/form-demande">
+            <div class="action-icon">
+              <i class="fas fa-calendar-plus"></i>
+            </div>
+            <div class="action-text">Prendre RDV</div>
+          </button>
+          <button class="action-btn secondary" routerLink="/list-demandes">
+            <div class="action-icon">
+              <i class="fas fa-clipboard-list"></i>
+            </div>
+            <div class="action-text">Voir demandes</div>
+          </button>
+          <button class="action-btn accent" routerLink="/ordonnance">
+            <div class="action-icon">
+              <i class="fas fa-file-prescription"></i>
+            </div>
+            <div class="action-text">Ordonnances</div>
+          </button>
+          <button class="action-btn success" routerLink="/dossier">
+            <div class="action-icon">
+              <i class="fas fa-folder"></i>
+            </div>
+            <div class="action-text">Dossier médical</div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card medical-summary">
+      <div class="card-header">
+        <h3 class="card-title">Résumé médical</h3>
+      </div>
+      <div class="card-content">
+        <div class="summary-item">
+          <div class="summary-label">Dernier examen</div>
+          <div class="summary-value">15 Janv. 2026</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-label">Prochain contrôle</div>
+          <div class="summary-value">15 Mars 2026</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-label">Allergies</div>
+          <div class="summary-value">Pénicilline</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-label">Traitement actuel</div>
+          <div class="summary-value">Amoxicilline</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card notifications">
+      <div class="card-header">
+        <h3 class="card-title">Notifications</h3>
+        <span class="badge">3</span>
+      </div>
+      <div class="card-content">
+        <div class="notification-item unread">
+          <div class="notification-icon">
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+          <div class="notification-content">
+            <div class="notification-title">Rappel RDV</div>
+            <div class="notification-desc">RDV avec Dr. Ndiaye demain à 10h30</div>
+            <div class="notification-time">Il y a 2 heures</div>
+          </div>
+        </div>
+        <div class="notification-item">
+          <div class="notification-icon">
+            <i class="fas fa-file-prescription"></i>
+          </div>
+          <div class="notification-content">
+            <div class="notification-title">Ordonnance disponible</div>
+            <div class="notification-desc">Votre ordonnance est prête à être téléchargée</div>
+            <div class="notification-time">Hier, 15:30</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
