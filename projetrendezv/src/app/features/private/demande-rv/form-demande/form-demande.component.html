@@ -1,0 +1,118 @@
+<div class="form-demande">
+  <div class="form-header">
+    <h1>Nouvelle demande de rendez-vous</h1>
+    <p>Remplissez ce formulaire pour demander un rendez-vous médical</p>
+  </div>
+
+  <form class="demande-form">
+    <div class="form-section">
+      <h3>Informations générales</h3>
+      
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="type">Type de consultation</label>
+          <select id="type" required>
+            <option value="">Sélectionnez...</option>
+            <option value="consultation">Consultation générale</option>
+            <option value="urgence">Consultation d'urgence</option>
+            <option value="suivi">Suivi médical</option>
+            <option value="examen">Examen spécifique</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="specialite">Spécialité</label>
+          <select id="specialite" required>
+            <option value="">Sélectionnez...</option>
+            <option value="general">Médecine générale</option>
+            <option value="cardio">Cardiologie</option>
+            <option value="dermato">Dermatologie</option>
+            <option value="gastro">Gastro-entérologie</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="motif">Motif de la consultation</label>
+        <textarea id="motif" placeholder="Décrivez les symptômes ou la raison de votre consultation..." rows="4" required></textarea>
+        <div class="char-count">0/500</div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3>Préférences de rendez-vous</h3>
+      
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="preferred-date">Date préférée</label>
+          <input type="date" id="preferred-date" required>
+        </div>
+
+        <div class="form-group">
+          <label for="preferred-time">Période préférée</label>
+          <select id="preferred-time" required>
+            <option value="">Sélectionnez...</option>
+            <option value="morning">Matin (8h-12h)</option>
+            <option value="afternoon">Après-midi (14h-18h)</option>
+            <option value="evening">Soir (18h-20h)</option>
+            <option value="any">Indifférent</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Niveau d'urgence</label>
+        <div class="urgency-levels">
+          <label class="urgency-option">
+            <input type="radio" name="urgent" value="normal">
+            <span class="option-content">
+              <span class="option-title">Normal</span>
+              <span class="option-desc">Consultation de routine</span>
+            </span>
+          </label>
+          <label class="urgency-option">
+            <input type="radio" name="urgent" value="urgent">
+            <span class="option-content">
+              <span class="option-title">Urgent</span>
+              <span class="option-desc">Dans les 48h</span>
+            </span>
+          </label>
+          <label class="urgency-option">
+            <input type="radio" name="urgent" value="very-urgent">
+            <span class="option-content">
+              <span class="option-title">Très urgent</span>
+              <span class="option-desc">Dans les 24h</span>
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3>Informations complémentaires</h3>
+      
+      <div class="form-group">
+        <label for="notes">Notes supplémentaires</label>
+        <textarea id="notes" placeholder="Informations complémentaires pour le médecin..." rows="3"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="checkbox-label">
+          <input type="checkbox" required>
+          <span>Je certifie que les informations fournies sont exactes et j'accepte les conditions d'utilisation</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" class="btn-secondary" routerLink="/list-demandes">
+        <i class="fas fa-times"></i>
+        Annuler
+      </button>
+      <button type="submit" class="btn-primary">
+        <i class="fas fa-paper-plane"></i>
+        Envoyer la demande
+      </button>
+    </div>
+  </form>
+</div>

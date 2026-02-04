@@ -1,0 +1,239 @@
+.ordonnance {
+  padding: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #f7fafc;
+  min-height: calc(100vh - 80px);
+}
+
+.ordonnance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.ordonnance-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0;
+}
+
+.header-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.btn-outline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: white;
+  color: #3498db;
+  border: 1px solid #3498db;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-outline:hover {
+  background-color: #f0f7ff;
+}
+
+.ordonnance-document {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eee;
+}
+
+.document-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #3498db;
+}
+
+.clinic-info h3 {
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.clinic-info p {
+  color: #7f8c8d;
+  margin: 3px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ordonnance-title h2 {
+  color: #2c3e50;
+  font-size: 24px;
+  margin: 20px 0 5px 0;
+}
+
+.document-ref {
+  color: #3498db;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.patient-info, .prescription-section, .doctor-signature {
+  margin-bottom: 40px;
+}
+
+.patient-info h4, .prescription-section h4 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  font-size: 18px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px dashed #eee;
+}
+
+.info-label {
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.info-value {
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.prescription-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.prescription-item {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  border-left: 4px solid #3498db;
+}
+
+.medicament {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.med-name {
+  color: #2c3e50;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.med-dosage {
+  color: #3498db;
+  font-weight: 500;
+}
+
+.prescription-details p {
+  color: #2c3e50;
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.prescription-details .warning {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #e67e22;
+  background-color: #fef9e7;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.doctor-signature {
+  text-align: right;
+  margin-top: 50px;
+}
+
+.signature-area {
+  display: inline-block;
+  text-align: center;
+  padding: 20px 40px;
+  border-top: 2px solid #2c3e50;
+}
+
+.signature-area p {
+  margin: 5px 0;
+  color: #2c3e50;
+}
+
+.signature-line {
+  width: 200px;
+  height: 1px;
+  background-color: #2c3e50;
+  margin: 20px auto;
+}
+
+.doctor-name {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.document-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  text-align: center;
+}
+
+.document-footer p {
+  color: #7f8c8d;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .ordonnance {
+    padding: 20px;
+  }
+  
+  .ordonnance-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .header-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .ordonnance-document {
+    padding: 20px;
+  }
+}
