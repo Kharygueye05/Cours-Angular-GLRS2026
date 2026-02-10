@@ -1,20 +1,38 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { ListDemandeRv } from '../../models/demande.models';
+import { ListDemandeRvModel } from '../../models/demande.models';
+import { DEMANDES_MOCK} from '../../../../mocks/demande.mock';
+import { ListDemandePageModel } from '../../models/demande.models';
+import { DemandeService } from '../services/demande.service';
+import { DemandeFilterModel } from '../../models/demande.models';
+import { FormsModule } from '@angular/forms';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-list-demandes',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, FormsModule],
   templateUrl: './list-demandes.component.html',
   styleUrl: './list-demandes.component.css'
 })
-export class ListDemandesComponent {
-  demandes: ListDemandeRv[]=[
-    {id:1, date:'2024-07-10', heure:'10:00', typeConsultation:'Consultation Générale', specialite:'Généraliste', statut:'En Attente'},
-    {id:2, date:'2024-07-12', heure:'14:30', typeConsultation:'Consultation Spécialisée', specialite:'Cardiologie', statut:'Confirmée'},
-    {id:3, date:'2024-07-15', heure:'09:00', typeConsultation:'Consultation de Suivi', specialite:'Dermatologie', statut:'Annulée'}  
-
-  ];
-
+export class ListDemandesComponent implements OnInit {
+  demandeResponse?:ListDemandePageModel;
+  filter: DemandeFilterModel={
+    statut: 'En attente',
+    specialite: ''
+  }
+  constructor(private demandeService: DemandeService){}
+  
+  private loadDemandes(): void {
+    this.demandeResponse=this.demandeService.getDemandes(this.filter);
+  }
+  ngOnInit(): void {
+    this.loadDemandes();
+  }
+  onFilterStatutChange(): void {
+    this.loadDemandes();
+  }
+  onFilterSpecialiteChange(): void {
+    this.loadDemandes();
+  }
 }
