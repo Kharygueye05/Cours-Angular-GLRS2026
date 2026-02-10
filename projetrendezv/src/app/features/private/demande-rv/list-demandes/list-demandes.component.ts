@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { ListDemandeRvModel } from '../../models/demande.models';
 import { DEMANDES_MOCK} from '../../../../mocks/demande.mock';
@@ -15,7 +15,7 @@ import { OnInit } from '@angular/core';
   templateUrl: './list-demandes.component.html',
   styleUrl: './list-demandes.component.css'
 })
-export class ListDemandesComponent implements OnInit {
+export class ListDemandesComponent implements OnInit, OnDestroy {
   demandeResponse?:ListDemandePageModel;
   filter: DemandeFilterModel={
     statut: 'En attente',
@@ -29,10 +29,22 @@ export class ListDemandesComponent implements OnInit {
   ngOnInit(): void {
     this.loadDemandes();
   }
-  onFilterStatutChange(): void {
+  ngOnDestroy(): void {
+    alert('ListDemandesComponent is being destroyed');
+  }
+  onFilterStatutandSpecialiteChange(): void {
     this.loadDemandes();
   }
-  onFilterSpecialiteChange(): void {
+
+  onPageChange(page: number): void {
+    this.filter.page = page;
     this.loadDemandes();
+  }
+
+  desactiveprecedent(): boolean {
+    return !(this.demandeResponse!=undefined && this.demandeResponse.currentpage>1);
+  }
+  desactivesuivant(): boolean {
+    return !(this.demandeResponse!=undefined && this.demandeResponse.currentpage < this.demandeResponse.totalpages);
   }
 }

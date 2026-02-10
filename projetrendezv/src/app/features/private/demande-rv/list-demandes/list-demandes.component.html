@@ -13,7 +13,7 @@
   <div class="filters-section">
     <div class="filter-group">
       <label for="status-filter">Statut</label>
-      <select id="status-filter" class="filter-select" [(ngModel)]="filter.statut" (change)="onFilterStatutChange()">
+      <select id="status-filter" class="filter-select" [(ngModel)]="filter.statut" (change)="onFilterStatutandSpecialiteChange()">
         <option value="">All</option>
         <option value="En attente">En attente</option>
         <option value="Confirmée">Confirmée</option>
@@ -23,7 +23,7 @@
     
     <div class="filter-group">
       <label for="type-filter">Spécialité</label>
-      <select id="type-filter" class="filter-select" [(ngModel)]="filter.specialite" (change)="onFilterSpecialiteChange()">
+      <select id="type-filter" class="filter-select" [(ngModel)]="filter.specialite" (change)="onFilterStatutandSpecialiteChange()">
         <option value="">All</option>
         <option value="Généraliste">Généraliste</option>
         <option value="Cardiologie">Cardiologie</option>
@@ -37,7 +37,7 @@
       Appliquer
     </button>
   </div>
-  @if (demandeResponse!=undefined && demandeResponse.data.length > 0){
+  @if (demandeResponse!=undefined && demandeResponse.data!=undefined && demandeResponse.data.length > 0){
     <div class="table-container">
       <table class="demandes-table">
         <thead>
@@ -77,23 +77,24 @@
   
       <nav class="pagination-nav">
         <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link prev" href="#">
+          <li class="page-item" [class.disabled]="desactiveprecedent()">
+            <button class="page-link prev" (click)="onPageChange(demandeResponse.currentpage - 1)" [disabled]="desactiveprecedent()">
               <i class="fas fa-chevron-left"></i>
               Précédent
-            </a>
+            </button>
           </li>
-          @for(indexPage of demandeResponse.pages; track indexPage){
-            <li class="page-item"[class.active]="indexPage===demandeResponse.currentpage">
-              <a class="page-link" href="#">{{ indexPage }}</a>
+          @for(page of demandeResponse.pages; track page){
+            <li class="page-item"[class.active]="page===demandeResponse.currentpage">
+              <button class="page-link" (click)="onPageChange(page)">{{ page }}</button>
             </li>
 
+
           }
-          <li class="page-item">
-            <a class="page-link next" href="#">
+          <li class="page-item" [class.disabled]="desactivesuivant()">
+            <button class="page-link next" (click)="onPageChange(demandeResponse.currentpage + 1)" [disabled]="desactivesuivant()">
               Suivant
               <i class="fas fa-chevron-right"></i>
-            </a>
+            </button>
           </li>
         </ul>
       </nav>

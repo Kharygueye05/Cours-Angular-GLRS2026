@@ -34,7 +34,7 @@ export class DemandeService {
       totalpages: totalPages,
       currentpage:page,
       totalitems: demandes.length,
-      pages: [1],
+      pages: pages,
       size: size
     };
     }
