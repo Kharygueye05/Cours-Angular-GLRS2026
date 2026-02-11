@@ -9,3 +9,4 @@ export const DEMANDES_MOCK:ListDemandeRvModel[] = [
     {id:6, date:'2024-07-22', heure:'15:00', typeConsultation:'Consultation Spécialisée', specialite:'Cardiologie', statut:'En attente'},
 ]
 
+
